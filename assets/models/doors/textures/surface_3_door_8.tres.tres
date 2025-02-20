@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://bmyw1gvwnikmw"]
+
+[ext_resource type="Shader" path="res://assets/shaders/door.gdshader" id="1_8tt1n"]
+[ext_resource type="Texture2D" uid="uid://qywibomia5a8" path="res://assets/models/doors/textures/wall_normal.png" id="2_klg8t"]
+[ext_resource type="Texture2D" uid="uid://dt5ri5p1hb58c" path="res://assets/textures/grass/grass_NORM.png" id="3_5xalg"]
+[ext_resource type="Texture2D" uid="uid://c633erb56l5xn" path="res://assets/models/doors/textures/wall_roughness.png" id="4_ktyfg"]
+[ext_resource type="Texture2D" uid="uid://bx3nped6vct0" path="res://assets/textures/grass/grass_ROUGH.png" id="5_w45v8"]
+[ext_resource type="Texture2D" uid="uid://de5r5nokb8eao" path="res://assets/models/doors/textures/wall.png" id="6_uxgv2"]
+[ext_resource type="Texture2D" uid="uid://bp73n6yl7efb" path="res://assets/textures/grass/grass.jpg" id="7_7sufj"]
+[ext_resource type="Texture2D" uid="uid://cbm6aosfta62r" path="res://assets/models/doors/textures/mask_c.png" id="8_2kwxx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8tt1n")
+shader_parameter/Roughness = 1.0
+shader_parameter/Normal = 1.0
+shader_parameter/Normal_Deph = 1.0
+shader_parameter/Normal_blue = 1.0
+shader_parameter/uv_blk_x = 1.0
+shader_parameter/uv_blk_y = 1.0
+shader_parameter/uv_r_x = 1.0
+shader_parameter/uv_r_y = 1.0
+shader_parameter/uv_g_x = 3.0
+shader_parameter/uv_g_y = 3.0
+shader_parameter/uv_b_x = 1.0
+shader_parameter/uv_b_y = 1.0
+shader_parameter/cubic_a = 1.0
+shader_parameter/cubic_b = 10.0
+shader_parameter/source_texture_mask = ExtResource("8_2kwxx")
+shader_parameter/source_texture_black = ExtResource("6_uxgv2")
+shader_parameter/source_texture_green = ExtResource("7_7sufj")
+shader_parameter/normal_black = ExtResource("2_klg8t")
+shader_parameter/roughness_black = ExtResource("4_ktyfg")
+shader_parameter/normal_green = ExtResource("3_5xalg")
+shader_parameter/roughness_green = ExtResource("5_w45v8")

@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://cywy5kmdmkxh"]
+
+[ext_resource type="Shader" path="res://assets/shaders/door.gdshader" id="1_luko7"]
+[ext_resource type="Texture2D" uid="uid://ce0t2u7lfd4f3" path="res://assets/models/doors/textures/door_8_normal.png" id="2_o5ymo"]
+[ext_resource type="Texture2D" uid="uid://bqgl42cafbibt" path="res://assets/models/doors/textures/door_8_roughness.png" id="3_c0fgy"]
+[ext_resource type="Texture2D" uid="uid://dscdxb4l5f0xw" path="res://assets/models/doors/textures/door_8.png" id="4_8o4cg"]
+[ext_resource type="Texture2D" uid="uid://c8vsybf6von50" path="res://assets/models/doors/textures/mask_b.png" id="5_56xld"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_luko7")
+shader_parameter/Roughness = 1.0
+shader_parameter/Normal = 1.0
+shader_parameter/Normal_Deph = 1.0
+shader_parameter/Normal_blue = 1.0
+shader_parameter/uv_blk_x = 1.0
+shader_parameter/uv_blk_y = 1.0
+shader_parameter/uv_r_x = 1.0
+shader_parameter/uv_r_y = 1.0
+shader_parameter/uv_g_x = 1.0
+shader_parameter/uv_g_y = 1.0
+shader_parameter/uv_b_x = 1.0
+shader_parameter/uv_b_y = 1.0
+shader_parameter/cubic_a = 1.0
+shader_parameter/cubic_b = 10.0
+shader_parameter/source_texture_mask = ExtResource("5_56xld")
+shader_parameter/source_texture_black = ExtResource("4_8o4cg")
+shader_parameter/normal_black = ExtResource("2_o5ymo")
+shader_parameter/roughness_black = ExtResource("3_c0fgy")

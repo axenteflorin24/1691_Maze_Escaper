@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://ckdqqqhprcjvi"]
+
+[ext_resource type="Shader" path="res://assets/shaders/door.gdshader" id="1_w6xgb"]
+[ext_resource type="Texture2D" uid="uid://dt5ri5p1hb58c" path="res://assets/textures/grass/grass_NORM.png" id="3_unwbd"]
+[ext_resource type="Texture2D" uid="uid://bx3nped6vct0" path="res://assets/textures/grass/grass_ROUGH.png" id="5_pa473"]
+[ext_resource type="Texture2D" uid="uid://bp73n6yl7efb" path="res://assets/textures/grass/grass.jpg" id="7_mwicp"]
+[ext_resource type="Texture2D" uid="uid://cbm6aosfta62r" path="res://assets/models/doors/textures/mask_c.png" id="8_88f57"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_w6xgb")
+shader_parameter/Roughness = 1.0
+shader_parameter/Normal = 1.0
+shader_parameter/Normal_Deph = 0.6
+shader_parameter/Normal_blue = 1.0
+shader_parameter/uv_blk_x = 3.0
+shader_parameter/uv_blk_y = 3.0
+shader_parameter/uv_r_x = 1.0
+shader_parameter/uv_r_y = 1.0
+shader_parameter/uv_g_x = 8.0
+shader_parameter/uv_g_y = 3.0
+shader_parameter/uv_b_x = 1.0
+shader_parameter/uv_b_y = 1.0
+shader_parameter/cubic_a = 1.0
+shader_parameter/cubic_b = 10.0
+shader_parameter/source_texture_mask = ExtResource("8_88f57")
+shader_parameter/source_texture_black = ExtResource("7_mwicp")
+shader_parameter/source_texture_green = ExtResource("7_mwicp")
+shader_parameter/normal_black = ExtResource("3_unwbd")
+shader_parameter/roughness_black = ExtResource("5_pa473")

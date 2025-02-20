@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dknx0gckuab7g"]
+
+[ext_resource type="Shader" path="res://assets/shaders/door.gdshader" id="1_b8edk"]
+[ext_resource type="Texture2D" uid="uid://e4q7x8mkevty" path="res://assets/models/doors/textures/mask_d.png" id="2_6bi02"]
+[ext_resource type="Texture2D" uid="uid://beyqqa6kpy3hn" path="res://assets/models/doors/textures/mask_a.png" id="3_g1drv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_b8edk")
+shader_parameter/Roughness = 1.0
+shader_parameter/Normal = 1.0
+shader_parameter/Normal_Deph = 1.0
+shader_parameter/Normal_blue = 1.0
+shader_parameter/uv_blk_x = 1.0
+shader_parameter/uv_blk_y = 1.0
+shader_parameter/uv_r_x = 1.0
+shader_parameter/uv_r_y = 1.0
+shader_parameter/uv_g_x = 1.0
+shader_parameter/uv_g_y = 1.0
+shader_parameter/uv_b_x = 1.0
+shader_parameter/uv_b_y = 1.0
+shader_parameter/cubic_a = 1.0
+shader_parameter/cubic_b = 10.0
+shader_parameter/source_texture_mask = ExtResource("3_g1drv")
+shader_parameter/source_texture_black = ExtResource("2_6bi02")
