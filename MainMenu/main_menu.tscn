@@ -1,0 +1,1076 @@
+[gd_scene load_steps=39 format=3 uid="uid://bs2dclhwpu7el"]
+
+[ext_resource type="Texture2D" uid="uid://pniyqaateo7x" path="res://assets/textures/background/background.png" id="1_0t607"]
+[ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_jl8wk"]
+[ext_resource type="Texture2D" uid="uid://cyuckvnig48ky" path="res://assets/textures/main_menu_buttons/play_button.png" id="2_fclfp"]
+[ext_resource type="Texture2D" uid="uid://dbwch3ke7gmtd" path="res://assets/textures/main_menu_buttons/level_1_button.png" id="3_1n20g"]
+[ext_resource type="Script" path="res://MainMenu/ProgressBar.gd" id="3_v66mx"]
+[ext_resource type="Texture2D" uid="uid://b23wu5031n8bc" path="res://assets/textures/main_menu_buttons/level_2_button.png" id="4_52opd"]
+[ext_resource type="Texture2D" uid="uid://bj4t4455wc58g" path="res://assets/textures/main_menu_buttons/level_3_button.png" id="5_2q68f"]
+[ext_resource type="Texture2D" uid="uid://dhergxecg32ps" path="res://assets/textures/main_menu_buttons/level_4_button.png" id="6_h71xc"]
+[ext_resource type="Texture2D" uid="uid://ml2fm6md6kou" path="res://assets/textures/padlock/locked.png" id="7_1wiwf"]
+[ext_resource type="Texture2D" uid="uid://sqcldexrrtru" path="res://assets/textures/main_menu_buttons/missions_button.png" id="7_gq1ln"]
+[ext_resource type="Texture2D" uid="uid://ychclk40f0o" path="res://assets/textures/main_menu_buttons/settings_button.png" id="8_h0ud0"]
+[ext_resource type="Texture2D" uid="uid://b6rbpnkvdxtgd" path="res://assets/textures/main_menu_buttons/quit_button.png" id="9_hjx4o"]
+[ext_resource type="Texture2D" uid="uid://c65q16hjm7ex0" path="res://assets/textures/main_menu_buttons/read_srtory_button.png" id="11_lxqu2"]
+[ext_resource type="AudioStream" uid="uid://ijeqwkyqvieq" path="res://assets/sounds/main_menu_soundtrack.mp3" id="11_n4472"]
+[ext_resource type="Texture2D" uid="uid://ctiivig0ifr7v" path="res://assets/textures/main_menu_buttons/close_button.png" id="12_r03yd"]
+[ext_resource type="Texture2D" uid="uid://8csf33m8t7pk" path="res://assets/textures/main_menu_buttons/blank.png" id="13_60ich"]
+[ext_resource type="Texture2D" uid="uid://cbjw3auss8g28" path="res://assets/textures/main_menu_buttons/easy_button.png" id="14_03fa7"]
+[ext_resource type="Texture2D" uid="uid://clke65ikabomk" path="res://assets/textures/main_menu_buttons/hard_button.png" id="15_k1x41"]
+[ext_resource type="Texture2D" uid="uid://dc16a6croxn0u" path="res://assets/textures/top_bar/healt.png" id="17_7hwjd"]
+[ext_resource type="Texture2D" uid="uid://bqbls44dobvcu" path="res://assets/textures/top_bar/extra_time.png" id="18_l0bwf"]
+[ext_resource type="Texture2D" uid="uid://d3qio5t80pgyh" path="res://assets/textures/top_bar/imunity.png" id="19_ci5sn"]
+[ext_resource type="Texture2D" uid="uid://bpwd4qjtflm7q" path="res://assets/textures/top_bar/fatality_1.png" id="20_nqefn"]
+[ext_resource type="Texture2D" uid="uid://dj2j28rd750xg" path="res://assets/textures/top_bar/fatality_2.png" id="21_1wtir"]
+[ext_resource type="Texture2D" uid="uid://dool4rjywktlw" path="res://assets/textures/top_bar/statistics.png" id="22_5uosm"]
+[ext_resource type="Texture2D" uid="uid://cxn7ibd420oyu" path="res://assets/textures/top_bar/key.png" id="24_hcyte"]
+[ext_resource type="Script" path="res://MainMenu/PausedMessage.gd" id="25_73qhr"]
+[ext_resource type="Texture2D" uid="uid://bq6etvlwalwwk" path="res://assets/textures/messages/paused_game.png" id="26_flyd5"]
+[ext_resource type="Texture2D" uid="uid://dt2qnb4nyq6pq" path="res://assets/textures/messages/resume_button.png" id="27_35f4t"]
+[ext_resource type="Texture2D" uid="uid://d30yx2ewinuy2" path="res://assets/textures/messages/exit_to_main_menu_button.png" id="28_r4rem"]
+[ext_resource type="Script" path="res://MainMenu/shop.gd" id="29_tyan0"]
+[ext_resource type="Texture2D" uid="uid://o3u3jtlpiw0i" path="res://assets/textures/shop/shop_background.png" id="30_4o8f8"]
+[ext_resource type="Texture2D" uid="uid://drlu82lt5ecfb" path="res://assets/textures/shop/plus_button.png" id="31_b01v1"]
+[ext_resource type="AudioStream" uid="uid://btwd4abwhkrim" path="res://assets/sounds/added.mp3" id="33_srnrt"]
+[ext_resource type="AudioStream" uid="uid://blsajgic75wh" path="res://assets/sounds/wrong.mp3" id="34_qh713"]
+
+[sub_resource type="Theme" id="Theme_k8h18"]
+
+[sub_resource type="Gradient" id="Gradient_fii35"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q7bxx"]
+gradient = SubResource("Gradient_fii35")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m22r3"]
+content_margin_left = 0.0
+texture = SubResource("GradientTexture2D_q7bxx")
+
+[node name="main_menu" type="Node3D"]
+visible = false
+script = ExtResource("1_jl8wk")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0t607")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -52.0
+offset_right = -26.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_v66mx")
+
+[node name="Wait" type="Timer" parent="Control/ProgressBar"]
+one_shot = true
+
+[node name="play" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/play"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 275.0
+offset_right = 199.0
+offset_bottom = 311.0
+texture = ExtResource("2_fclfp")
+expand_mode = 1
+
+[node name="level_1" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/level_1"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 319.0
+offset_right = 199.0
+offset_bottom = 355.0
+texture = ExtResource("3_1n20g")
+expand_mode = 1
+
+[node name="level_2" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/level_2"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 362.0
+offset_right = 199.0
+offset_bottom = 398.0
+texture = ExtResource("4_52opd")
+expand_mode = 1
+
+[node name="padlock" type="TextureRect" parent="Control/level_2"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 365.0
+offset_right = 196.0
+offset_bottom = 395.0
+texture = ExtResource("7_1wiwf")
+expand_mode = 1
+
+[node name="level_3" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/level_3"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 405.0
+offset_right = 199.0
+offset_bottom = 441.0
+texture = ExtResource("5_2q68f")
+expand_mode = 1
+
+[node name="padlock" type="TextureRect" parent="Control/level_3"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 408.0
+offset_right = 196.0
+offset_bottom = 438.0
+texture = ExtResource("7_1wiwf")
+expand_mode = 1
+
+[node name="level_4" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/level_4"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 448.0
+offset_right = 199.0
+offset_bottom = 484.0
+texture = ExtResource("6_h71xc")
+expand_mode = 1
+
+[node name="padlock" type="TextureRect" parent="Control/level_4"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 451.0
+offset_right = 196.0
+offset_bottom = 481.0
+texture = ExtResource("7_1wiwf")
+expand_mode = 1
+
+[node name="missions" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/missions"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 491.0
+offset_right = 199.0
+offset_bottom = 527.0
+texture = ExtResource("7_gq1ln")
+expand_mode = 1
+
+[node name="settings" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/settings"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 534.0
+offset_right = 199.0
+offset_bottom = 570.0
+texture = ExtResource("8_h0ud0")
+expand_mode = 1
+
+[node name="quit" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/quit"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 577.0
+offset_right = 199.0
+offset_bottom = 613.0
+texture = ExtResource("9_hjx4o")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 118.0
+offset_top = 280.0
+offset_right = 198.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(0.105882, 0.270588, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0.290196, 0.290196, 0.290196, 0.486275)
+theme_override_font_sizes/font_size = 20
+text = "level_1"
+
+[node name="story" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 464.0
+offset_top = 14.0
+offset_right = 1129.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.72549, 0.992157, 0.756863, 1)
+theme_override_colors/font_shadow_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_font_sizes/font_size = 25
+text = "1691 Maze Escaper, in this video game the character played by the great and unique Rimescu Şmenărescu. Who is this Rimescu Şmenărescu really? He is the biggest consumer of alcoholic beverages and occasional drug user. He is also the best guesser in data from watches that indicate the exact time, knp, barcodes and numbers of any nature. Currently, Rimescu Şmenărescu's body is led by souls from a parallel world. After a consumption of drugs, alcohol and other toxicities, fetishes of catching people by the head like a zombie, his soul left for his former workplace, haunting the factory, refusing to return to the deity body of Rimescu Şmenărescu. These souls from parallel worlds riot in his toxic body, he still makes people around him sick with the toxicity in his body."
+autowrap_mode = 2
+
+[node name="settings_buttons" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 464.0
+offset_top = 14.0
+offset_right = 1129.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.72549, 0.992157, 0.756863, 1)
+theme_override_colors/font_shadow_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_font_sizes/font_size = 25
+text = "---------------------------------[SETTINGS]---------------------------------
+
+---[UNDER CONSTRUCTION]----------------------------------------
+-----------------------------------------[UNDER CONSTRUCTION]---
+---[UNDER CONSTRUCTION]----------------------------------------
+-----------------------------------------[UNDER CONSTRUCTION]---
+---[UNDER CONSTRUCTION]----------------------------------------
+-----------------------------------------[UNDER CONSTRUCTION]---
+---[UNDER CONSTRUCTION]----------------------------------------
+-----------------------------------------[UNDER CONSTRUCTION]---
+---[UNDER CONSTRUCTION]----------------------------------------
+-----------------------------------------[UNDER CONSTRUCTION]---
+---[UNDER CONSTRUCTION]----------------------------------------
+-----------------------------------------[UNDER CONSTRUCTION]---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------"
+autowrap_mode = 2
+
+[node name="read_story" type="TextureButton" parent="Control/settings_buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/settings_buttons/read_story"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 541.0
+offset_right = 481.0
+offset_bottom = 577.0
+texture = ExtResource("11_lxqu2")
+expand_mode = 1
+
+[node name="close_settings" type="TextureButton" parent="Control/settings_buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/settings_buttons/close_settings"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 541.0
+offset_right = 656.0
+offset_bottom = 577.0
+texture = ExtResource("12_r03yd")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/settings_buttons"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 41.0
+offset_right = 383.0
+offset_bottom = 77.0
+texture = ExtResource("13_60ich")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/settings_buttons/TextureRect"]
+layout_mode = 0
+offset_right = 333.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.521569, 0, 0.423529, 1)
+theme_override_colors/font_shadow_color = Color(0.243137, 0.243137, 0.243137, 1)
+theme_override_font_sizes/font_size = 22
+text = "       Dificulty Selected : Easy"
+
+[node name="easy_dificulty" type="TextureButton" parent="Control/settings_buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/settings_buttons/easy_dificulty"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 41.0
+offset_right = 518.0
+offset_bottom = 77.0
+texture = ExtResource("14_03fa7")
+expand_mode = 1
+
+[node name="hard_dificulty" type="TextureButton" parent="Control/settings_buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/settings_buttons/hard_dificulty"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 41.0
+offset_right = 655.0
+offset_bottom = 77.0
+texture = ExtResource("15_k1x41")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Control/settings_buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+
+[node name="missions_text" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 464.0
+offset_top = 14.0
+offset_right = 1129.0
+offset_bottom = 243.0
+theme_override_colors/font_color = Color(0.72549, 0.992157, 0.756863, 1)
+theme_override_colors/font_shadow_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_font_sizes/font_size = 25
+text = "Complete level one on any difficulty to unlock level two.
+Complete level one and two on hard difficulty to unlock level three.
+ Complete levels one, two, and three on hard difficulty to unlock level four."
+autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Control/missions_text"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 241.0
+offset_right = 663.0
+offset_bottom = 285.0
+stretch_mode = 0
+
+[node name="read_story" type="Label" parent="Control/missions_text/TextureButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.002
+anchor_right = -0.002
+offset_left = -1.688
+offset_top = -1.0
+offset_right = 655.312
+offset_bottom = 39.0
+theme = SubResource("Theme_k8h18")
+theme_override_colors/font_color = Color(0.72549, 0.235294, 0.756863, 1)
+theme_override_colors/font_shadow_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_m22r3")
+text = "                                      Read Story"
+autowrap_mode = 2
+
+[node name="game_title" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 198.0
+offset_bottom = 94.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "1691 Maze
+Escaper"
+
+[node name="TopBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="bar" type="Control" parent="TopBar"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_right = 743.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Healt" type="TextureRect" parent="TopBar/bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.5
+offset_top = -29.5
+offset_right = -275.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_7hwjd")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TopBar/bar/Healt"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.03681, 0.753381)
+text = "0"
+horizontal_alignment = 1
+
+[node name="ExtraTime" type="TextureRect" parent="TopBar/bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.5
+offset_top = -29.5
+offset_right = -204.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_l0bwf")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TopBar/bar/ExtraTime"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.03681, 0.753381)
+text = "0"
+horizontal_alignment = 1
+
+[node name="Imunity" type="TextureRect" parent="TopBar/bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -29.5
+offset_right = -133.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_ci5sn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TopBar/bar/Imunity"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.03681, 0.753381)
+text = "0"
+horizontal_alignment = 1
+
+[node name="Fatality1" type="TextureRect" parent="TopBar/bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -29.5
+offset_right = -61.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_nqefn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TopBar/bar/Fatality1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.03681, 0.753381)
+text = "0"
+horizontal_alignment = 1
+
+[node name="Fatality2" type="TextureRect" parent="TopBar/bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -29.5
+offset_right = 9.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_1wtir")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TopBar/bar/Fatality2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.03681, 0.753381)
+text = "0"
+horizontal_alignment = 1
+
+[node name="statistics" type="TextureRect" parent="TopBar/bar"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 7.0
+offset_right = 140.0
+offset_bottom = 71.0
+texture = ExtResource("22_5uosm")
+
+[node name="caps" type="Label" parent="TopBar/bar/statistics"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 9.0
+offset_right = 139.0
+offset_bottom = 32.0
+text = "00000000"
+
+[node name="healt" type="Label" parent="TopBar/bar/statistics"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 9.0
+offset_right = 250.0
+offset_bottom = 32.0
+text = "100"
+
+[node name="score" type="Label" parent="TopBar/bar/statistics"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 33.0
+offset_right = 139.0
+offset_bottom = 56.0
+text = "00000000"
+
+[node name="time" type="Label" parent="TopBar/bar/statistics"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 33.0
+offset_right = 250.0
+offset_bottom = 56.0
+text = "00:00"
+
+[node name="label" type="Label" parent="TopBar/bar/statistics"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 58.0
+offset_bottom = 31.0
+text = "Caps: "
+
+[node name="label3" type="Label" parent="TopBar/bar/statistics"]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 8.0
+offset_right = 204.0
+offset_bottom = 31.0
+text = "Healt: "
+
+[node name="label4" type="Label" parent="TopBar/bar/statistics"]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 32.0
+offset_right = 204.0
+offset_bottom = 55.0
+text = "Time: "
+
+[node name="label2" type="Label" parent="TopBar/bar/statistics"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 55.0
+text = "Score: "
+
+[node name="Key" type="TextureRect" parent="TopBar/bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 16.5
+offset_top = -29.5
+offset_right = 80.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_hcyte")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TopBar/bar/Key"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.03681, 0.753381)
+text = "0"
+horizontal_alignment = 1
+
+[node name="PausedMessage" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("25_73qhr")
+
+[node name="MessageBox" type="TextureRect" parent="PausedMessage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_flyd5")
+
+[node name="Resume" type="TextureButton" parent="PausedMessage/MessageBox"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -10.5
+offset_right = 111.0
+offset_bottom = 44.5
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PausedMessage/MessageBox/Resume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -1.5
+offset_right = 3.0
+offset_bottom = -1.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_35f4t")
+
+[node name="ExitToMainMenu" type="TextureButton" parent="PausedMessage/MessageBox"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -362.0
+offset_top = -12.5
+offset_right = -5.0
+offset_bottom = 41.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PausedMessage/MessageBox/ExitToMainMenu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -354.0
+offset_top = -26.5
+offset_right = 1.0
+offset_bottom = 28.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("28_r4rem")
+
+[node name="shop" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("29_tyan0")
+
+[node name="TextureRect" type="TextureRect" parent="shop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -180.0
+offset_right = 240.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_4o8f8")
+
+[node name="titlle" type="Label" parent="shop/TextureRect"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 7.0
+offset_right = 374.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 28
+text = "Dark WEB 100% Safe Shop       :)"
+
+[node name="MedKit" type="Label" parent="shop/TextureRect"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 96.0
+offset_right = 154.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 36
+text = "Med Kit"
+
+[node name="MedKit" type="TextureButton" parent="shop/TextureRect/MedKit"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 9.0
+offset_right = 173.0
+offset_bottom = 43.0
+
+[node name="TextureRect" type="TextureRect" parent="shop/TextureRect/MedKit/MedKit"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 32.0
+offset_bottom = 34.0
+texture = ExtResource("31_b01v1")
+expand_mode = 1
+flip_h = true
+
+[node name="ExtraTime" type="Label" parent="shop/TextureRect"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 97.0
+offset_right = 401.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 36
+text = "Extra Time"
+
+[node name="extratime" type="TextureButton" parent="shop/TextureRect/ExtraTime"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 9.0
+offset_right = 224.0
+offset_bottom = 43.0
+
+[node name="TextureRect" type="TextureRect" parent="shop/TextureRect/ExtraTime/extratime"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 32.0
+offset_bottom = 34.0
+texture = ExtResource("31_b01v1")
+expand_mode = 1
+flip_h = true
+
+[node name="FatalityA" type="Label" parent="shop/TextureRect"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 151.0
+offset_right = 210.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 36
+text = "FatalityA"
+
+[node name="fatality_a" type="TextureButton" parent="shop/TextureRect/FatalityA"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 9.0
+offset_right = 189.0
+offset_bottom = 43.0
+
+[node name="TextureRect" type="TextureRect" parent="shop/TextureRect/FatalityA/fatality_a"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 39.0
+offset_bottom = 34.0
+texture = ExtResource("31_b01v1")
+expand_mode = 1
+flip_h = true
+
+[node name="FatalityB" type="Label" parent="shop/TextureRect"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 151.0
+offset_right = 425.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 36
+text = "FatalityB"
+
+[node name="fatality_b" type="TextureButton" parent="shop/TextureRect/FatalityB"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 9.0
+offset_right = 189.0
+offset_bottom = 43.0
+
+[node name="TextureRect" type="TextureRect" parent="shop/TextureRect/FatalityB/fatality_b"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 39.0
+offset_bottom = 34.0
+texture = ExtResource("31_b01v1")
+expand_mode = 1
+flip_h = true
+
+[node name="Invincibility" type="Label" parent="shop/TextureRect"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 209.0
+offset_right = 221.0
+offset_bottom = 259.0
+theme_override_font_sizes/font_size = 36
+text = "Invincibility"
+
+[node name="invincibility" type="TextureButton" parent="shop/TextureRect/Invincibility"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 9.0
+offset_right = 189.0
+offset_bottom = 43.0
+
+[node name="TextureRect" type="TextureRect" parent="shop/TextureRect/Invincibility/invincibility"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 1.0
+offset_right = 82.0
+offset_bottom = 34.0
+texture = ExtResource("31_b01v1")
+expand_mode = 1
+flip_h = true
+
+[node name="Label" type="Label" parent="shop/TextureRect"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 283.0
+offset_right = 462.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(1, 0.894118, 0.87451, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.576471, 0.945098, 0.341176)
+text = "Prices: Med Kit - 2800 Caps , Extra Time - 4000 Caps
+FatalityA & FatalityB: 4000 Caps, Invincibility 10K Caps."
+
+[node name="Close" type="TextureButton" parent="shop/TextureRect"]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 212.0
+offset_right = 444.0
+offset_bottom = 252.0
+
+[node name="TextureRect" type="TextureRect" parent="shop/TextureRect/Close"]
+layout_mode = 0
+offset_right = 153.0
+offset_bottom = 40.0
+texture = ExtResource("12_r03yd")
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("11_n4472")
+volume_db = -21.549
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("33_srnrt")
+volume_db = -14.8
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("34_qh713")
+volume_db = -14.8
+
+[connection signal="mouse_entered" from="Control/play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="Control/play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="Control/play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Control/level_1" to="." method="_on_level_1_mouse_entered"]
+[connection signal="mouse_exited" from="Control/level_1" to="." method="_on_level_1_mouse_exited"]
+[connection signal="pressed" from="Control/level_1" to="." method="_on_level_1_pressed"]
+[connection signal="mouse_entered" from="Control/level_2" to="." method="_on_level_2_mouse_entered"]
+[connection signal="mouse_exited" from="Control/level_2" to="." method="_on_level_2_mouse_exited"]
+[connection signal="pressed" from="Control/level_2" to="." method="_on_level_2_pressed"]
+[connection signal="mouse_entered" from="Control/level_3" to="." method="_on_level_3_mouse_entered"]
+[connection signal="mouse_exited" from="Control/level_3" to="." method="_on_level_3_mouse_exited"]
+[connection signal="pressed" from="Control/level_3" to="." method="_on_level_3_pressed"]
+[connection signal="mouse_entered" from="Control/level_4" to="." method="_on_level_4_mouse_entered"]
+[connection signal="mouse_exited" from="Control/level_4" to="." method="_on_level_4_mouse_exited"]
+[connection signal="pressed" from="Control/level_4" to="." method="_on_level_4_pressed"]
+[connection signal="mouse_entered" from="Control/missions" to="." method="_on_missions_mouse_entered"]
+[connection signal="mouse_exited" from="Control/missions" to="." method="_on_missions_mouse_exited"]
+[connection signal="pressed" from="Control/missions" to="." method="_on_missions_pressed"]
+[connection signal="mouse_entered" from="Control/settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Control/settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="pressed" from="Control/settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="Control/quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Control/quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Control/quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Control/settings_buttons/read_story" to="." method="_on_read_story_mouse_entered"]
+[connection signal="mouse_exited" from="Control/settings_buttons/read_story" to="." method="_on_read_story_mouse_exited"]
+[connection signal="pressed" from="Control/settings_buttons/read_story" to="." method="_on_read_story_pressed"]
+[connection signal="mouse_entered" from="Control/settings_buttons/close_settings" to="." method="_on_close_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Control/settings_buttons/close_settings" to="." method="_on_close_settings_mouse_exited"]
+[connection signal="pressed" from="Control/settings_buttons/close_settings" to="." method="_on_close_settings_pressed"]
+[connection signal="mouse_entered" from="Control/settings_buttons/easy_dificulty" to="." method="_on_easy_dificulty_mouse_entered"]
+[connection signal="mouse_exited" from="Control/settings_buttons/easy_dificulty" to="." method="_on_easy_dificulty_mouse_exited"]
+[connection signal="pressed" from="Control/settings_buttons/easy_dificulty" to="." method="_on_easy_dificulty_pressed"]
+[connection signal="mouse_entered" from="Control/settings_buttons/hard_dificulty" to="." method="_on_hard_dificulty_mouse_entered"]
+[connection signal="mouse_exited" from="Control/settings_buttons/hard_dificulty" to="." method="_on_hard_dificulty_mouse_exited"]
+[connection signal="pressed" from="Control/settings_buttons/hard_dificulty" to="." method="_on_hard_dificulty_pressed"]
+[connection signal="mouse_entered" from="Control/missions_text/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/missions_text/TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="Control/missions_text/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="PausedMessage/MessageBox/Resume" to="PausedMessage" method="_on_resume_mouse_entered"]
+[connection signal="mouse_exited" from="PausedMessage/MessageBox/Resume" to="PausedMessage" method="_on_resume_mouse_exited"]
+[connection signal="pressed" from="PausedMessage/MessageBox/Resume" to="PausedMessage" method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="PausedMessage/MessageBox/ExitToMainMenu" to="PausedMessage" method="_on_exit_to_main_menu_mouse_entered"]
+[connection signal="mouse_exited" from="PausedMessage/MessageBox/ExitToMainMenu" to="PausedMessage" method="_on_exit_to_main_menu_mouse_exited"]
+[connection signal="pressed" from="PausedMessage/MessageBox/ExitToMainMenu" to="PausedMessage" method="_on_exit_to_main_menu_pressed"]
+[connection signal="mouse_entered" from="shop/TextureRect/MedKit/MedKit" to="shop" method="_on_med_kit_mouse_entered"]
+[connection signal="mouse_exited" from="shop/TextureRect/MedKit/MedKit" to="shop" method="_on_med_kit_mouse_exited"]
+[connection signal="pressed" from="shop/TextureRect/MedKit/MedKit" to="shop" method="_on_med_kit_pressed"]
+[connection signal="mouse_entered" from="shop/TextureRect/ExtraTime/extratime" to="shop" method="_on_extratime_mouse_entered"]
+[connection signal="mouse_exited" from="shop/TextureRect/ExtraTime/extratime" to="shop" method="_on_extratime_mouse_exited"]
+[connection signal="pressed" from="shop/TextureRect/ExtraTime/extratime" to="shop" method="_on_extratime_pressed"]
+[connection signal="mouse_entered" from="shop/TextureRect/FatalityA/fatality_a" to="shop" method="_on_fatality_a_mouse_entered"]
+[connection signal="mouse_exited" from="shop/TextureRect/FatalityA/fatality_a" to="shop" method="_on_fatality_a_mouse_exited"]
+[connection signal="pressed" from="shop/TextureRect/FatalityA/fatality_a" to="shop" method="_on_fatality_a_pressed"]
+[connection signal="mouse_entered" from="shop/TextureRect/FatalityB/fatality_b" to="shop" method="_on_fatality_b_mouse_entered"]
+[connection signal="mouse_exited" from="shop/TextureRect/FatalityB/fatality_b" to="shop" method="_on_fatality_b_mouse_exited"]
+[connection signal="pressed" from="shop/TextureRect/FatalityB/fatality_b" to="shop" method="_on_fatality_b_pressed"]
+[connection signal="mouse_entered" from="shop/TextureRect/Invincibility/invincibility" to="shop" method="_on_invincibility_mouse_entered"]
+[connection signal="mouse_exited" from="shop/TextureRect/Invincibility/invincibility" to="shop" method="_on_invincibility_mouse_exited"]
+[connection signal="pressed" from="shop/TextureRect/Invincibility/invincibility" to="shop" method="_on_invincibility_pressed"]
+[connection signal="mouse_entered" from="shop/TextureRect/Close" to="shop" method="_on_close_mouse_entered"]
+[connection signal="mouse_exited" from="shop/TextureRect/Close" to="shop" method="_on_close_mouse_exited"]
+[connection signal="pressed" from="shop/TextureRect/Close" to="shop" method="_on_close_pressed"]
