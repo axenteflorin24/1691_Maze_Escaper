@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c8sykbr2l56vt"]
+
+[ext_resource type="Texture2D" uid="uid://bht8a548todsq" path="res://assets/textures/ability_cards/caps100.png" id="1_w3h42"]
+[ext_resource type="Texture2D" uid="uid://cduqhtgcu6qer" path="res://assets/textures/ability_cards/metalic.png" id="2_6v110"]
+[ext_resource type="Texture2D" uid="uid://d2fipk20osquv" path="res://assets/textures/ability_cards/roughness_NORM.png" id="3_5x4v7"]
+[ext_resource type="Texture2D" uid="uid://dbubnglch4eyh" path="res://assets/textures/ability_cards/roughness.png" id="4_j0t34"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0.913725, 0.913725, 0.913725, 1)
+albedo_texture = ExtResource("1_w3h42")
+metallic = 0.44
+metallic_specular = 0.13
+metallic_texture = ExtResource("2_6v110")
+roughness_texture = ExtResource("4_j0t34")
+normal_enabled = true
+normal_scale = 0.26
+normal_texture = ExtResource("3_5x4v7")
