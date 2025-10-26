@@ -1,47 +1,47 @@
-[gd_scene load_steps=79 format=3 uid="uid://0iwu476vv85v"]
+[gd_scene load_steps=80 format=3 uid="uid://0iwu476vv85v"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_bp5eb"]
-[ext_resource type="Texture2D" uid="uid://fx4dxrry1gar" path="res://assets/models/player/textures/skin.png" id="2_6kbxi"]
-[ext_resource type="Texture2D" uid="uid://r3tqmcu1agf5" path="res://assets/models/player/textures/cloth.png" id="3_tathu"]
-[ext_resource type="Texture2D" uid="uid://b7h1gem5q5rcu" path="res://assets/models/player/textures/face.png" id="4_06hef"]
-[ext_resource type="Texture2D" uid="uid://bkrokus706iti" path="res://assets/models/player/textures/shoes.png" id="5_w41f8"]
-[ext_resource type="Texture2D" uid="uid://gnsj63wcq62x" path="res://assets/models/player/textures/logo.png" id="6_2ck6e"]
-[ext_resource type="Texture2D" uid="uid://cfhjskqlasi0b" path="res://assets/models/player/textures/hat.png" id="7_8uf0f"]
-[ext_resource type="Texture2D" uid="uid://bx5btpjdk03f2" path="res://assets/models/player/textures/hat_b.png" id="8_t80n4"]
-[ext_resource type="AudioStream" uid="uid://peex5ihs7c1e" path="res://assets/sounds/footsteps-in-grass.mp3" id="15_h3tgw"]
+[ext_resource type="Texture2D" uid="uid://bo12q03y16noe" path="res://assets/models/player/textures/skin.png" id="2_6kbxi"]
+[ext_resource type="Texture2D" uid="uid://v4pa0cnjs5bo" path="res://assets/models/player/textures/cloth.png" id="3_tathu"]
+[ext_resource type="Texture2D" uid="uid://et03jrpeiido" path="res://assets/models/player/textures/face.png" id="4_06hef"]
+[ext_resource type="Texture2D" uid="uid://dpg4d4oykjcv0" path="res://assets/models/player/textures/shoes.png" id="5_w41f8"]
+[ext_resource type="Texture2D" uid="uid://b1xirysx58slg" path="res://assets/models/player/textures/logo.png" id="6_2ck6e"]
+[ext_resource type="Texture2D" uid="uid://7w3hc6bbfen1" path="res://assets/models/player/textures/hat.png" id="7_8uf0f"]
+[ext_resource type="Texture2D" uid="uid://bihlwdykndo2x" path="res://assets/models/player/textures/hat_b.png" id="8_t80n4"]
+[ext_resource type="AudioStream" uid="uid://crskydeemavw0" path="res://assets/sounds/footsteps-in-grass.mp3" id="15_h3tgw"]
 [ext_resource type="PackedScene" uid="uid://b34cpqa026uv1" path="res://assets/models/shield/shield.tscn" id="15_rx740"]
-[ext_resource type="AudioStream" uid="uid://ddw12xk81l0vy" path="res://assets/sounds/footsteps_in_grass_fastest.mp3" id="16_n854p"]
+[ext_resource type="AudioStream" uid="uid://bhr752vbhmscg" path="res://assets/sounds/footsteps_in_grass_fastest.mp3" id="16_n854p"]
 [ext_resource type="Animation" uid="uid://ce0dsc5hvmury" path="res://assets/models/player/animations/dead.tres" id="16_rqmn7"]
-[ext_resource type="AudioStream" uid="uid://djwvkh3k7eieh" path="res://assets/sounds/shoot_b.mp3" id="17_ltbip"]
-[ext_resource type="AudioStream" uid="uid://5u5umwe4eqot" path="res://assets/sounds/door_close_from_other_side_001_.wav" id="18_u2xgu"]
-[ext_resource type="AudioStream" uid="uid://davvcy3h52hul" path="res://assets/sounds/door_close_from_other_side_002_.wav" id="19_7f061"]
-[ext_resource type="AudioStream" uid="uid://dqs1imldxby14" path="res://assets/sounds/door_close_from_other_side_003_.wav" id="20_67y3f"]
-[ext_resource type="AudioStream" uid="uid://c0oaohfyncthb" path="res://assets/sounds/key_for_door_001_.wav" id="21_oa88c"]
-[ext_resource type="AudioStream" uid="uid://dqy307lcw6x3b" path="res://assets/sounds/key_for_door_002_.wav" id="22_okk0x"]
-[ext_resource type="AudioStream" uid="uid://b6ohhvlaq5jwy" path="res://assets/sounds/key_for_door_003_3.wav" id="23_y212u"]
-[ext_resource type="AudioStream" uid="uid://dglll4pl5nfxx" path="res://assets/sounds/key_for_exit_door_.wav" id="24_oyneb"]
-[ext_resource type="AudioStream" uid="uid://ccu1gvswpiod0" path="res://assets/sounds/unlock_level_.wav" id="25_1jhod"]
-[ext_resource type="AudioStream" uid="uid://cskhgnxu8jqwc" path="res://assets/sounds/game_over.wav" id="26_b4p2n"]
-[ext_resource type="AudioStream" uid="uid://dx62fdutprql7" path="res://assets/sounds/run_out_of_time_b.mp3" id="27_ymiur"]
-[ext_resource type="AudioStream" uid="uid://fieptf723oav" path="res://assets/sounds/25_left.wav" id="28_u5fgd"]
-[ext_resource type="AudioStream" uid="uid://b1e7qxxxo7hnw" path="res://assets/sounds/20_left.wav" id="29_n271p"]
-[ext_resource type="AudioStream" uid="uid://dtfatpkos3ojb" path="res://assets/sounds/15_left.wav" id="30_w8hw5"]
-[ext_resource type="AudioStream" uid="uid://cb13c5ahv5ufj" path="res://assets/sounds/10.wav" id="31_nwbu0"]
-[ext_resource type="AudioStream" uid="uid://8mvlnrtx1f2a" path="res://assets/sounds/5_min.wav" id="32_08vlg"]
-[ext_resource type="AudioStream" uid="uid://cn4ptbejvpyjy" path="res://assets/sounds/2_left.wav" id="33_ooo44"]
-[ext_resource type="AudioStream" uid="uid://dk7y7p25gnhml" path="res://assets/sounds/1_left.wav" id="34_47apy"]
-[ext_resource type="AudioStream" uid="uid://bkhxecf5apvgn" path="res://assets/sounds/resume_game_.wav" id="34_e8n1p"]
-[ext_resource type="AudioStream" uid="uid://bjprd018a8igw" path="res://assets/sounds/game_finished.wav" id="35_k2vd4"]
-[ext_resource type="AudioStream" uid="uid://br1p7dh7cyyxt" path="res://assets/models/ability_cards/sounds/extra_time_added.wav" id="37_xcgmp"]
-[ext_resource type="AudioStream" uid="uid://cw7ohu8qoqkrg" path="res://assets/sounds/10_caps.wav" id="38_0d3ag"]
-[ext_resource type="AudioStream" uid="uid://danchaoivh4wq" path="res://assets/models/ability_cards/sounds/fatalitiy_added.wav" id="38_hgytk"]
-[ext_resource type="AudioStream" uid="uid://bqcsnowho51cw" path="res://assets/models/ability_cards/sounds/invincibility_added.wav" id="39_j4iyt"]
-[ext_resource type="AudioStream" uid="uid://cygep006d2434" path="res://assets/sounds/100_caps.wav" id="39_npgog"]
-[ext_resource type="AudioStream" uid="uid://bdpmkrnxetiqo" path="res://assets/models/ability_cards/sounds/med_kit_added.wav" id="40_46sxx"]
-[ext_resource type="AudioStream" uid="uid://b1wcb46qdwm8t" path="res://assets/sounds/1000_caps.wav" id="40_s2o5k"]
-[ext_resource type="AudioStream" uid="uid://blsajgic75wh" path="res://assets/sounds/wrong.mp3" id="42_glknv"]
-[ext_resource type="AudioStream" uid="uid://btwd4abwhkrim" path="res://assets/sounds/added.mp3" id="43_fhgsk"]
-[ext_resource type="AudioStream" uid="uid://d2lvwevy4yxsk" path="res://assets/sounds/fatality.mp3" id="47_75hiq"]
+[ext_resource type="AudioStream" uid="uid://bhggqkhnhx8cw" path="res://assets/sounds/shoot_b.mp3" id="17_ltbip"]
+[ext_resource type="AudioStream" uid="uid://c4vm4k305hxkl" path="res://assets/sounds/door_close_from_other_side_001_.wav" id="18_u2xgu"]
+[ext_resource type="AudioStream" uid="uid://b6p7bbya21633" path="res://assets/sounds/door_close_from_other_side_002_.wav" id="19_7f061"]
+[ext_resource type="AudioStream" uid="uid://cntk0e5juukwp" path="res://assets/sounds/door_close_from_other_side_003_.wav" id="20_67y3f"]
+[ext_resource type="AudioStream" uid="uid://ba6n367c0v88q" path="res://assets/sounds/key_for_door_001_.wav" id="21_oa88c"]
+[ext_resource type="AudioStream" uid="uid://cltmo8358muyc" path="res://assets/sounds/key_for_door_002_.wav" id="22_okk0x"]
+[ext_resource type="AudioStream" uid="uid://cy2glpp8k6jm6" path="res://assets/sounds/key_for_door_003_3.wav" id="23_y212u"]
+[ext_resource type="AudioStream" uid="uid://cg5xyglfjs1dp" path="res://assets/sounds/key_for_exit_door_.wav" id="24_oyneb"]
+[ext_resource type="AudioStream" uid="uid://ov1lnec10nau" path="res://assets/sounds/unlock_level_.wav" id="25_1jhod"]
+[ext_resource type="AudioStream" uid="uid://bh4c8fieqbcjr" path="res://assets/sounds/game_over.wav" id="26_b4p2n"]
+[ext_resource type="AudioStream" uid="uid://x4mxn0fywnew" path="res://assets/sounds/run_out_of_time_b.mp3" id="27_ymiur"]
+[ext_resource type="AudioStream" uid="uid://vo635emtnqey" path="res://assets/sounds/25_left.wav" id="28_u5fgd"]
+[ext_resource type="AudioStream" uid="uid://b330wkflmrher" path="res://assets/sounds/20_left.wav" id="29_n271p"]
+[ext_resource type="AudioStream" uid="uid://d13x8fojlqvjw" path="res://assets/sounds/15_left.wav" id="30_w8hw5"]
+[ext_resource type="AudioStream" uid="uid://de0c81k13lju6" path="res://assets/sounds/10.wav" id="31_nwbu0"]
+[ext_resource type="AudioStream" uid="uid://dcybt5yow74fa" path="res://assets/sounds/5_min.wav" id="32_08vlg"]
+[ext_resource type="AudioStream" uid="uid://tn53d8jnueab" path="res://assets/sounds/2_left.wav" id="33_ooo44"]
+[ext_resource type="AudioStream" uid="uid://2rr1fhjpl8f5" path="res://assets/sounds/1_left.wav" id="34_47apy"]
+[ext_resource type="AudioStream" uid="uid://ce2tljxjm6nsr" path="res://assets/sounds/resume_game_.wav" id="34_e8n1p"]
+[ext_resource type="AudioStream" uid="uid://c1l58qk7iq4jk" path="res://assets/sounds/game_finished.wav" id="35_k2vd4"]
+[ext_resource type="AudioStream" uid="uid://hrnf3pswl067" path="res://assets/models/ability_cards/sounds/extra_time_added.wav" id="37_xcgmp"]
+[ext_resource type="AudioStream" uid="uid://btlg1hq3oca4u" path="res://assets/sounds/10_caps.wav" id="38_0d3ag"]
+[ext_resource type="AudioStream" uid="uid://bx4w70pj4ug5v" path="res://assets/models/ability_cards/sounds/fatalitiy_added.wav" id="38_hgytk"]
+[ext_resource type="AudioStream" uid="uid://b4emwfg1rmjpf" path="res://assets/models/ability_cards/sounds/invincibility_added.wav" id="39_j4iyt"]
+[ext_resource type="AudioStream" uid="uid://durav0j81np7i" path="res://assets/sounds/100_caps.wav" id="39_npgog"]
+[ext_resource type="AudioStream" uid="uid://dxtt50iabk2aa" path="res://assets/models/ability_cards/sounds/med_kit_added.wav" id="40_46sxx"]
+[ext_resource type="AudioStream" uid="uid://pmk43em0g54f" path="res://assets/sounds/1000_caps.wav" id="40_s2o5k"]
+[ext_resource type="AudioStream" uid="uid://b7knfnlauoqij" path="res://assets/sounds/wrong.mp3" id="42_glknv"]
+[ext_resource type="AudioStream" uid="uid://cniu2y3iay2j5" path="res://assets/sounds/added.mp3" id="43_fhgsk"]
+[ext_resource type="AudioStream" uid="uid://bdukeqecb5120" path="res://assets/sounds/fatality.mp3" id="47_75hiq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1mlle"]
 radius = 2.005
@@ -4504,7 +4504,13 @@ animation = &"idle"
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_a1xh6"]
 
+[sub_resource type="Curve" id="Curve_kkv5s"]
+_data = [Vector2(0.0789474, 0.241758), 0.0, 0.0, 0, 0, Vector2(0.542105, 0.868132), 0.0, 0.0, 0, 0, Vector2(0.963158, 0.681319), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_f4l46"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_kkv5s")
 input_0/name = "idle"
 input_0/auto_advance = false
 input_0/reset = true
@@ -4532,6 +4538,7 @@ input_7/reset = true
 metadata/fatality = false
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_kb35k"]
+graph_offset = Vector2(110.051, -262.823)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_12csr")
 nodes/Animation/position = Vector2(-260, -300)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_mfomc")
@@ -5147,7 +5154,7 @@ bones/77/rotation = Quaternion(-4.33681e-19, 1.50463e-36, -3.46945e-18, 1)
 bones/77/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="RootNode/Skeleton3D"]
-transform = Transform3D(0.997737, -0.0616814, -0.0267647, 0.0618158, 0.998074, 0.00422671, 0.0264527, -0.00587203, 0.999632, -17.3302, 1699.82, 30.2526)
+transform = Transform3D(0.998118, -0.0553608, -0.0263777, 0.0556051, 0.998411, 0.00862269, 0.0258586, -0.0100736, 0.999614, -12.5478, 1700.41, 26.8162)
 bone_name = "mixamorig_Head"
 bone_idx = 5
 
@@ -5157,7 +5164,7 @@ mesh = SubResource("ArrayMesh_cffl2")
 skeleton = NodePath("")
 
 [node name="BoneAttachment3D2" type="BoneAttachment3D" parent="RootNode/Skeleton3D"]
-transform = Transform3D(0.998301, 0.000570251, -0.0582625, -0.000133061, 0.99997, 0.00751097, 0.0582651, -0.00749019, 0.998273, 7.48953, 1110.23, 1.1435)
+transform = Transform3D(0.998553, 0.00426204, -0.0536142, -0.00403802, 0.999981, 0.00428976, 0.0536316, -0.0040668, 0.998553, 9.51582, 1110.62, -2.87257)
 bone_name = "mixamorig_Spine"
 bone_idx = 1
 
@@ -5166,7 +5173,7 @@ transform = Transform3D(99.7435, -1.09009, 7.0741, 1.12016, 99.9932, -0.385211, 
 visible = false
 
 [node name="BoneAttachment3D3" type="BoneAttachment3D" parent="RootNode/Skeleton3D"]
-transform = Transform3D(0.119671, 0.0280102, -0.992416, 0.0085235, -0.999587, -0.0271851, -0.992774, -0.00520644, -0.119866, 308.186, 947.646, 106.923)
+transform = Transform3D(0.120185, 0.0247681, -0.99244, 0.0282221, -0.999363, -0.0215234, -0.992347, -0.0254229, -0.120814, 311.527, 946.01, 97.7545)
 bone_name = "mixamorig_LeftHand"
 bone_idx = 11
 
