@@ -1,7 +1,7 @@
 # 1691_Maze_Escaper
 
 <h3>26.10.2025 - fixed player camera controller for mouse and keyboard</h3>
-<h3>26.10.2025 - modified player animationtions transition, added xfade time for smooth transition</h3>
+<h3>26.10.2025 - modified player animationtions transition, added xfade time and curve for smooth transition</h3>
 
 Godot Engine Version >= 4.2.1.The source code is "open source" and can be modified and marketed without asking the developer for permission. This game is made possible with the help of Godot Engine, approximately 80% of the game's functions are from Godot Engine.
 
