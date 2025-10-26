@@ -211,7 +211,7 @@ func _physics_process(delta):
 			play_card_sounds()
 			door_interact()
 			add_door_key()
-			CAMERA_CONTROLLER.global_position = lerp(CAMERA_CONTROLLER.global_position, $RootNode/character/Marker3D.global_position, 0.48)
+			CAMERA_CONTROLLER.global_position = $RootNode/character/Marker3D.global_position
 			CAMERA_CONTROLLER.global_position.y = 0.235
 			CAMERA_CONTROLLER.rotation.y = rotation.y
 
