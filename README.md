@@ -10,3 +10,19 @@ Story:1691 Maze Escaper, in this video game the character played by the great an
 Missions: Complete level one on any difficulty to unlock level two.
 Complete level one and two on hard difficulty to unlock level three.
 Complete levels one, two, and three on hard difficulty to unlock level four.
+
+<img src="https://raw.githubusercontent.com/axenteflorin24/1691_Maze_Escaper/refs/heads/main/screenshots/screenshot_1.png">
+
+<img src="https://raw.githubusercontent.com/axenteflorin24/1691_Maze_Escaper/refs/heads/main/screenshots/screenshot_2.png">
+
+<img src="https://raw.githubusercontent.com/axenteflorin24/1691_Maze_Escaper/refs/heads/main/screenshots/screenshot_3.png">
+
+<img src="https://raw.githubusercontent.com/axenteflorin24/1691_Maze_Escaper/refs/heads/main/screenshots/screenshot_4.png">
+
+<img src="https://raw.githubusercontent.com/axenteflorin24/1691_Maze_Escaper/refs/heads/main/screenshots/screenshot_5.png">
+
+<img src="https://raw.githubusercontent.com/axenteflorin24/1691_Maze_Escaper/refs/heads/main/screenshots/screenshot_6.png">
+
+<img src="https://raw.githubusercontent.com/axenteflorin24/1691_Maze_Escaper/refs/heads/main/screenshots/screenshot_7.png">
+
+<img src="https://raw.githubusercontent.com/axenteflorin24/1691_Maze_Escaper/refs/heads/main/screenshots/screenshot_8.png">
