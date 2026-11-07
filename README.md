@@ -1,5 +1,5 @@
 # 1691_Maze_Escaper
-<h3>08.11.2026 - Full Playable Downloads (Only Windows X86_64): https://axenteflorin24.itch.io/1691-maze-escaper</h3>
+<h3>08.11.2026 - Available on itch.io : https://axenteflorin24.itch.io/1691-maze-escaper</h3>
 <h3>26.10.2025 - fixed player camera controller for mouse and keyboard</h3>
 <h3>26.10.2025 - modified player animationtions transition time, for smooth transition</h3>
 
